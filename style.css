@@ -1,0 +1,21 @@
+body {
+  margin-top: 20px;
+}
+
+.output-block {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.output-block label {
+  margin-bottom: 10px;
+}
+
+.output-area {
+  min-height: 3em;
+  border: 1px solid #aaaaaa;
+  padding: 10px;
+  resize: none;
+  background-color: white !important;
+}
+

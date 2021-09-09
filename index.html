@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="UTF-8"/>
+  <title>Upside-down or Strikethrough Text</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="code.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+
+    <div class="row">
+      <div class="col">
+        <h1>Transform Text</h1>
+        <p>
+        This page allows you to transform normal text into either an
+        <a href="#upside-down-section">upside-down backwards version</a>
+        ("spɹɐʍʞɔɐq uʍop-ǝpısdn") or a
+        <a href="#strikethrough-section">strikethrough version</a>
+        ("s̶t̶r̶i̶k̶e̶t̶h̶r̶o̶u̶g̶h̶").
+        </p>
+      </div>
+    </div>
+
+    <div class="row">
+      <h2 id="upside-down-section">Upside-down</h2>
+      <p>
+      Type your text in the text box, below. The upside-down
+      version will appear underneath the text box. Click the
+      <strong>Copy</strong> button to
+      copy the upside-down text to your clipboard.
+      </p>
+    </div>
+    <div class="row">
+      <div class="col">
+        <form id="upside-down-form">
+          <div class="input-group mb-3">
+            <span id="text-input-ud" class="input-group-text">Your text</span>
+            <textarea id="upside-down-input" class="form-control input-box"
+                      aria-label="Your text"
+                      aria-describedby="text-input-ud"
+                      onInput="upsideDownInputChanged()"></textarea>
+          </div>
+          <div class="input-group mb-3">
+            <span id="result-label-ud" class="input-group-text">Upside down</span>
+            <textarea id="upside-down-output" class="output-area form-control"
+                      aria-label="Upside down text"
+                      aria-describedby="result-label-ud"
+                      readonly></textarea>
+          </div>
+          <div class="mb-3">
+            <button id="copy-upside-down-text" type="button"
+                    class="btn btn-primary" onClick="copyUpsideDown()"
+                    disabled>
+              Copy
+            </button>
+            <button id="clear-upside-down-text" type="button"
+                    class="btn btn-primary" onClick="clearUpsideDown()"
+                    disabled>
+              Clear
+            </button>
+
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <hr/>
+
+    <div class="row">
+      <div class="col">
+        <h2 id="strikethrough-section">Strikethrough</h2>
+        <p>
+        Type your text in the text box, below. The strikethrough
+        version will appear underneath the text box. Click the
+        <strong>Copy</strong> button to
+        copy the strikethrough text to your clipboard.
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <form id="strikethrough-form">
+          <div class="input-group mb-3">
+            <span id="text-input-st" class="input-group-text">Your text</span>
+            <textarea id="strikethrough-input" class="form-control input-box"
+                      aria-label="Your text"
+                      aria-describedby="text-input-st"
+                      onInput="strikethroughInputChanged()"></textarea>
+          </div>
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="result-label-st">Strikethrough</span>
+            <textarea id="strikethrough-output" class="output-area form-control"
+                      aria-label="Strikethrough text"
+                      aria-describedby="result-label-st"
+                      readonly></textarea>
+          </div>
+          <div class="mb-3">
+            <button id="copy-strikethrough-text" type="button"
+                    class="btn btn-primary" onClick="copyStrikethrough()"
+                    disabled>
+              Copy
+            </button>
+            <button id="clear-strikethrough-text" type="button"
+                    class="btn btn-primary" onClick="clearStrikethrough()"
+                    disabled>
+              Clear
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
