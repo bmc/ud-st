@@ -7,3 +7,5 @@ text, using Unicode mappings.
 The resulting output text is suitable for pasting into non-HTML environments
 (e.g., Twitter, Facebook, a terminal emulator), as long as those environment
 support UTF-8.
+
+The text transformations are done entirely in-browser, via JavaScript.
