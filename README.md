@@ -9,3 +9,6 @@ The transformed text is suitable for pasting into non-HTML environments
 support UTF-8.
 
 The text transformations are done entirely in-browser, via JavaScript.
+
+There are loads of existing similar web sites out there, but I wrote my own
+so that I can control the mappings (especially of the upside-down characters).
