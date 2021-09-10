@@ -19,3 +19,6 @@ body {
   background-color: rgb(255, 240, 242) !important;
 }
 
+.note {
+  font-size: smaller;
+}
