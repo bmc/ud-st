@@ -17,7 +17,7 @@ const NORMAL_TO_UPSIDE_DOWN = {
   '-': '-',
   '_': '‾',
   '.': '˙',
-  ';': '؛',
+  ';': '\u061b', /* escaped, because it displays weirdly in some places */
   '?': '¿',
   '‿': '⁀',
   '⁅': '⁆',
