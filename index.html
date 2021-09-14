@@ -41,15 +41,40 @@
     <div class="row">
       <h2 id="upside-down-section">Upside-down</h2>
       <p>
-      Type your text in the text box, below. The upside-down
-      version will appear underneath, as you type. Characters that have
-      no upside-down equivalents are left unchanged.</p>
+        Type your text in the text box, below. The upside-down
+        version will appear underneath, as you type. Characters that have
+        no upside-down equivalents are left unchanged.
+      </p>
 
       <p>
-      Click the
-      <strong>Copy</strong> button to
-      copy the upside-down text to your clipboard.
+        Click the
+        <strong>Copy</strong> button to
+        copy the upside-down text to your clipboard.
+        (<a data-bs-toggle="modal" data-bs-target="#ud-explain" href="#">How does this work?</a>)
       </p>
+      <div class="modal fade" id="ud-explain" tabindex="-1"
+           aria-labelledby="ud-explain-label" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="ud-explain-label">How It Works</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              The upside-down text works by mapping each normal (right-side up)
+              character to a different Unicode character that looks—as much
+              as possible—like an upside-down version of the character. Some
+              upside-down versions look better than others. The mappings
+              this page uses are defined by the
+              <code>NORMAL_TO_UPSIDE_DOWN</code> constant in the
+              <a href="https://github.com/bmc/ud-st/blob/master/code.js" target="_blank">JavaScript code</a>.
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary btn-sm" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="row">
       <div class="col">
@@ -92,14 +117,44 @@
       <div class="col">
         <h2 id="strikethrough-section">Strikethrough</h2>
         <p>
-        Type your text in the text box, below. The strikethrough
-        version will appear underneath, as you type.
+          Type your text in the text box, below. The strikethrough
+          version will appear underneath, as you type.
         </p>
         <p>
           Click the
           <strong>Copy</strong> button to
           copy the strikethrough text to your clipboard.
+          (<a data-bs-toggle="modal" data-bs-target="#st-explain" href="#">How does this work?</a>)
         </p>
+        <div class="modal fade" id="st-explain" tabindex="-1"
+          aria-labelledby="st-explain-label" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="st-explain-label">How It Works</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                The upside-down text works by using Unicode
+                <a href="https://en.wikipedia.org/wiki/Combining_character" target="_blank">combining character</a>
+                U+0336. (In many programming languages, including Python,
+                Ruby, JavaScript, Scala, and others, you can express Characters
+                like that using a special <code>\u</code> prefix. e.g.,
+                <code>\u0366</code>.) If you emit the special character U+0336
+                immediately <i>after</i> some other printable character, the
+                U+0336 combining character <i>modifies</i> the preceding character
+                by adding a strikethrough line to it. For example, if you type
+                "hi!" into the text box, the JavaScript code maps it to
+                <code>h\u0366i\u0336!</code>. A Unicode-capable
+                display program (such as a web browser or some terminal emulators)
+                will then display that string as <code>H̶i̶</code>.
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-primary btn-sm" data-bs-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <div class="row">
