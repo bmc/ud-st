@@ -2,6 +2,10 @@ body {
   margin-top: 20px;
 }
 
+#logo {
+  padding: 20px;
+}
+
 .output-block {
   margin-top: 20px;
   margin-bottom: 20px;
@@ -21,4 +25,8 @@ body {
 
 .note {
   font-size: smaller;
+}
+
+p .modal-trigger {
+  float: right;
 }
