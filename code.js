@@ -189,6 +189,7 @@ function clearUpsideDown() {
 // Store the strikethrough characters here. Beats pulling them back out
 // of the DOM to copy them to the clipboard.
 var strikethroughBuf = '';
+var whiteSpaceChar = new RegExp("\\s");
 
 /**
  * Given a string, return a version with each character stricken out.
@@ -196,8 +197,15 @@ var strikethroughBuf = '';
  * COMBINING LONG STROKE OVERLAY character. Placing this character after
  * a "normal" character produces the strikeout version.
  */
-function strikeout(s) {
-  return s.split('').map(c => `${c}\u0336`).join('');
+function strikeout(s, skipWhiteSpace) {
+  return s.split('')
+          .map(c => {
+            if (skipWhiteSpace && whiteSpaceChar.test(c))
+              return c;
+            else
+              return `${c}\u0336`
+          })
+          .join('');
 }
 
 /**
@@ -210,15 +218,24 @@ function strikeout(s) {
   enableButton("clear-strikethrough-text", nonEmpty);
 }
 
+function updateStrikethroughOutput() {
+  let skipWhite = document.getElementById('st-skip-whitespace').checked;
+  let text = getTextAreaInput('strikethrough-input');
+  strikethroughBuf = strikeout(text, skipWhite);
+  setTextAreaContent('strikethrough-output', strikethroughBuf);
+  checkStrikethroughButtons();
+}
+
 /**
  * Handle a change in the contents of the strikethrough input <textarea>.
  * This function will change the output text box and update the buttons.
  */
 function strikethroughInputChanged() {
-  var value = getTextAreaInput("strikethrough-input");
-  strikethroughBuf = strikeout(value);
-  setTextAreaContent("strikethrough-output", strikethroughBuf);
-  checkStrikethroughButtons();
+  updateStrikethroughOutput();
+}
+
+function strikethroughCheckboxChanged() {
+  updateStrikethroughOutput();
 }
 
 /**

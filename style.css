@@ -15,6 +15,10 @@ body {
   margin-bottom: 10px;
 }
 
+.form-check {
+  margin-bottom: 20px;
+}
+
 .output-area {
   min-height: 3em;
   border: 1px solid #aaaaaa;

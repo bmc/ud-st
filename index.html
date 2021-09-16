@@ -170,6 +170,14 @@
                       aria-describedby="text-input-st"
                       onInput="strikethroughInputChanged()"></textarea>
           </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value=""
+                   id="st-skip-whitespace"
+                   onChange="strikethroughCheckboxChanged(this)"/>
+            <label class="form-check-label" for="st-skip-whitespace">
+              Don't strike out white space
+            </label>
+          </div>
           <div class="input-group mb-3">
             <span class="input-group-text" id="result-label-st">Strikethrough</span>
             <textarea id="strikethrough-output" class="output-area form-control"
