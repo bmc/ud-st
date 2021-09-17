@@ -19,6 +19,10 @@ body {
   margin-bottom: 20px;
 }
 
+#html-strikethrough {
+  text-decoration-line: line-through;
+}
+
 .output-area {
   min-height: 3em;
   border: 1px solid #aaaaaa;

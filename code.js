@@ -104,6 +104,29 @@ function getTextAreaInput(elementId) {
 }
 
 /**
+ * Remove all child nodes from an element.
+ */
+function removeAllChildNodes(element) {
+  while (element.lastChild) {
+    element.removeChild(element.lastChild)
+  }
+}
+
+/**
+ * Delete all child elements inside an element and add a new text element
+ * with the specific text.
+ */
+function replaceTextInside(elementId, newText) {
+  /*
+    Useful for replacing the text inside a <div> or <span>.
+  */
+  var target = document.getElementById(elementId);
+  removeAllChildNodes(target);
+  var newTextNode = document.createTextNode(newText);
+  target.appendChild(newTextNode);
+}
+
+/**
  * Given the ID of an HTML <textarea> element, clear the contents of the
  * text box.
  */
@@ -224,6 +247,7 @@ function updateStrikethroughOutput() {
   strikethroughBuf = strikeout(text, skipWhite);
   setTextAreaContent('strikethrough-output', strikethroughBuf);
   checkStrikethroughButtons();
+  replaceTextInside("html-strikethrough", text);
 }
 
 /**
