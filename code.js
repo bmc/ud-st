@@ -281,4 +281,5 @@ function clearStrikethrough() {
   clearTextAreaContent("strikethrough-output");
   strikethroughBuf = '';
   checkStrikethroughButtons();
+  replaceTextInside('html-strikethrough', '');
 }
